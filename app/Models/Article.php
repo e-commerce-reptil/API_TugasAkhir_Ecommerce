@@ -8,6 +8,39 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    public $articles, $judul, $description, $link;
+    public $isModal;
+
+    protected $fillable = [
+        'judul',
+        'description',
+        'link'
+    ];
+
+    public function create()
+    {
+        $this->resetFields();
+        $this->openModal();
+    }
+
+    public function resetFields()
+    {
+        $this->judul = '';
+        $this->description = '';
+        $this->link = '';
+    }
+
+    public function openModal()
+    {
+        $this->isModal = true;
+    }
+
+    public function closeModal()
+    {
+        $this->isModal = false;
+    }
+
     public function users()
     {
         return $this -> hasMany(User::class);
