@@ -9,37 +9,40 @@ class Article extends Model
 {
     use HasFactory;
 
-    public $articles, $judul, $description, $link;
-    public $isModal;
+    protected $table = "articles";
+    protected $fillable = ['judul', 'description', 'link'];
 
-    protected $fillable = [
-        'judul',
-        'description',
-        'link'
-    ];
+    // public $articles, $judul, $description, $link;
+    // public $isModal;
 
-    public function create()
-    {
-        $this->resetFields();
-        $this->openModal();
-    }
+    // protected $fillable = [
+    //     'judul',
+    //     'description',
+    //     'link'
+    // ];
 
-    public function resetFields()
-    {
-        $this->judul = '';
-        $this->description = '';
-        $this->link = '';
-    }
+    // public function create()
+    // {
+    //     $this->resetFields();
+    //     $this->openModal();
+    // }
 
-    public function openModal()
-    {
-        $this->isModal = true;
-    }
+    // public function resetFields()
+    // {
+    //     $this->judul = '';
+    //     $this->description = '';
+    //     $this->link = '';
+    // }
 
-    public function closeModal()
-    {
-        $this->isModal = false;
-    }
+    // public function openModal()
+    // {
+    //     $this->isModal = true;
+    // }
+
+    // public function closeModal()
+    // {
+    //     $this->isModal = false;
+    // }
 
     public function users()
     {

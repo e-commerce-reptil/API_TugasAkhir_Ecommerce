@@ -38,7 +38,7 @@ class Posts extends Component
             'harga_product' => 'required',
             'desc_product' => 'required',
             'pic_product' => 'required',
-            'category_id' => 'required',
+            'category_id' => 'required'
         ]);
 
         Product::updateOrCreate(['id' => $this->postId], [

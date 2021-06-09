@@ -16,9 +16,9 @@
             @endif
 
             {{-- cREATE DATA --}}
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Tambah</button>
-                @if ($isModal)
-                    @include('livewire.create')
+            <button wire:click="showModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Tambah</button>
+                @if ($isOpen)
+                    @include('livewire.createarticle')
                 @endif
 
             <table class="table-fixed w-full">
@@ -27,7 +27,7 @@
                         <th class="px-4 py-2">Judul</th>
                         <th class="px-4 py-2">Description</th>
                         <th class="px-4 py-2">Link</th>
-                        <th class="px-4 py-2">Status</th>
+                        <th class="px-4 py-2">Action</th>
                     </tr>
                 </thead>
 
@@ -38,7 +38,12 @@
                             <td class="border px-4 py-2">{{ $article->description }}</td>
                             <td class="border px-4 py-2">{{ $article->link }}</td>
                             <td class="border px-4 py-2">
-
+                                <button wire:click="edit({{ $article->id }})" class="bg-blue-500 hover:bg-blue-200 text-white font-bold py-1 px-4 rounded">
+                                    Edit
+                                </button>
+                                <button wire:click="delete({{ $article->id }})" class="bg-red-500 hover:bg-red-200 text-white font-bold py-1 px-4 rounded">
+                                    Delete
+                                </button>
                             </td>
                         </tr>
 

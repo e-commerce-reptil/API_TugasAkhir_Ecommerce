@@ -53,7 +53,13 @@
                     </div>
                     <div class="mb-2">
                         <label for="categoryId" class="block">Category</label>
-                        <input wire:model="category_id" type="text" name="categoryId" class="shadow appearance-none border rounded w-full py-2 px-3 text-black-700" placeholder="Input Post">
+                        {{-- <input wire:model="category_id" type="text" name="categoryId" class="shadow appearance-none border rounded w-full py-2 px-3 text-black-700" placeholder="Input Post"> --}}
+                        <select wire:model="category_id" type="text" name="categoryId" class="shadow appearance-none border rounded w-full py-2 px-3 text-black-700" placeholder="Input Post">
+                            <option value="">Pilih</option>
+                            <option value="1">Hewan</option>
+                            <option value="2">Makanan</option>
+                            <option value="3">Aksesoris</option>
+                        </select>
                     </div>
                 </div>
 

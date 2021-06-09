@@ -117,9 +117,9 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/heri3.jpeg')}}" alt="..." />
-                        <h4>Heri Setiawan</h4>
-                        <p class="text-muted">Frondend</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/fiqih.jpeg')}}" alt="..." />
+                        <h4>Fiqih</h4>
+                        <p class="text-muted">Backend</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -127,9 +127,9 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/fiqih.jpeg')}}" alt="..." />
-                        <h4>Fiqih</h4>
-                        <p class="text-muted">Backend</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/heri3.jpeg')}}" alt="..." />
+                        <h4>Heri Setiawan</h4>
+                        <p class="text-muted">Owner Reptil House</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
