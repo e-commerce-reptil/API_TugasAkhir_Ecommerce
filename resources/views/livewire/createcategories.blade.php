@@ -10,23 +10,16 @@
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="">
                         <div class="mb-4">
-                            <label for="forJudul" class="block text-gray-700 text-sm font-bold mb-2">Judul</label>
-                            <input type="text" wire:model="judul" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forJudul">
-                            @error('judul')
+                            <label for="forName" class="block text-gray-700 text-sm font-bold mb-2">Judul</label>
+                            <input type="text" wire:model="name" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forName">
+                            @error('name')
                                 <span class="text-red-500">{{ $message}}</span>
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                            <input type="text" wire:model="description" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forDescription">
-                            @error('description')
-                                <span class="text-red-500">{{ $message}}</span>
-                            @enderror
-                        </div>
-                        <div class="mb-4">
-                            <label for="forLink" class="block text-gray-700 text-sm font-bold mb-2">Link</label>
-                            <input type="text" wire:model="link" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forLink">
-                            @error('link')
+                            <label for="forImage" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                            <input type="text" wire:model="image_link" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forImage">
+                            @error('image_link')
                                 <span class="text-red-500">{{ $message}}</span>
                             @enderror
                         </div>

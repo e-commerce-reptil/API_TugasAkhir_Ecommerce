@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Livewire\Articles;
+use App\Http\Livewire\Categories;
 use App\Http\Livewire\Posts;
 
 /*
@@ -35,4 +36,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
 
     Route::get('article', Articles::class)->name('article');
     Route::get('posts', Posts::class)->name('posts');
+    Route::get('category', Categories::class)->name('category');
 });
