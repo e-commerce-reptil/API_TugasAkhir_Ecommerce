@@ -23,17 +23,19 @@
 
             <table class="table-fixed w-full">
                 <thead>
-                    <tr class="bg-gray-100">
-                        <th class="px-4 py-2">Judul</th>
-                        <th class="px-4 py-2">Description</th>
-                        <th class="px-4 py-2">Link</th>
-                        <th class="px-4 py-2">Action</th>
+                    <tr class="bg-indigo-500">
+                        <th class="px-4 py-2 text-white">ID</th>
+                        <th class="px-4 py-2 text-white">Judul</th>
+                        <th class="px-4 py-2 text-white">Description</th>
+                        <th class="px-4 py-2 text-white">Link</th>
+                        <th class="px-4 py-2 text-white">Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     @forelse ($articles as $article)
                         <tr>
+                            <td class="border px-4 py-2">{{ $article->id }}</td>
                             <td class="border px-4 py-2">{{ $article->judul }}</td>
                             <td class="border px-4 py-2">{{ $article->description }}</td>
                             <td class="border px-4 py-2">{{ $article->link }}</td>
