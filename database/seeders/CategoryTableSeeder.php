@@ -15,18 +15,18 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Hewan',
-            'image_link' => 'ssss'
+            'name' => 'Hewan'
+            //'image_link' => 'ssss'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Makanan',
-            'image_link' => 'ssss2'
+            'name' => 'Makanan'
+            //'image_link' => 'ssss2'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Aksesoris',
-            'image_link' => 'ssss3'
+            'name' => 'Aksesoris'
+            //'image_link' => 'ssss3'
         ]);
     }
 }

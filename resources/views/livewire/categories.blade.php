@@ -26,7 +26,7 @@
                     <tr class="bg-indigo-500">
                         <th class="px-4 py-2 text-white">ID</th>
                         <th class="px-4 py-2 text-white">Nama</th>
-                        <th class="px-4 py-2 text-white">Foto</th>
+                        <th class="px-4 py-2 text-white">Action</th>
                     </tr>
                 </thead>
 
@@ -35,7 +35,6 @@
                         <tr>
                             <td class="border px-4 py-2">{{ $category->id }}</td>
                             <td class="border px-4 py-2">{{ $category->name }}</td>
-                            <td class="border px-4 py-2">{{ $category->image_link }}</td>
                             <td class="border px-4 py-2">
                                 <button wire:click="edit({{ $category->id }})" class="bg-blue-500 hover:bg-blue-200 text-white font-bold py-1 px-4 rounded">
                                     Edit

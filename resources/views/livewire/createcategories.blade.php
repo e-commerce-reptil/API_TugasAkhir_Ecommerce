@@ -10,19 +10,13 @@
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="">
                         <div class="mb-4">
-                            <label for="forName" class="block text-gray-700 text-sm font-bold mb-2">Judul</label>
+                            <label for="forName" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
                             <input type="text" wire:model="name" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forName">
                             @error('name')
                                 <span class="text-red-500">{{ $message}}</span>
                             @enderror
                         </div>
-                        <div class="mb-4">
-                            <label for="forImage" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                            <input type="text" wire:model="image_link" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forImage">
-                            @error('image_link')
-                                <span class="text-red-500">{{ $message}}</span>
-                            @enderror
-                        </div>
+
                     </div>
                     <div class=" px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <button wire:click.prevent="store()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">

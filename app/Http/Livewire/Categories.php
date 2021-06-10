@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Categories extends Component
 {
-    public $postId, $name, $image_link;
+    public $postId, $categories, $name;
     public $isOpen = 0;
 
     public function render()
@@ -27,12 +27,10 @@ class Categories extends Component
     public function store(){
         $this->validate([
             'name' => 'required',
-            'image_link' => 'required'
         ]);
 
         Category::updateOrCreate(['id' => $this->postId], [
-                'name' => $this->name,
-                'image_link' => $this->image_link
+                'name' => $this->name
         ]);
 
         $this->hideModal();
@@ -40,14 +38,12 @@ class Categories extends Component
         session()->flash('info',$this->postId ? 'Update Success' : 'Created Success');
 
         $this->name = '';
-        $this->image_link = '';
     }
 
     public function edit($id){
         $Category = Category::findOrFail($id);
         $this->postId = $id;
         $this->name = $Category->name;
-        $this->image_link = $Category->image_link;
         $this->showModal();
     }
 
