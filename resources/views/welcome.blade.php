@@ -58,7 +58,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">GH </a>
-            <img src="{{ asset("assets/img/logos/F6.png")}}" alt="..." />
+            {{-- <img src="{{ asset("assets/img/logos/F6.png")}}" alt="..." /> --}}
 
             <div class="collapse navbar-collapse" id="navbarResponsive"></div>
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
