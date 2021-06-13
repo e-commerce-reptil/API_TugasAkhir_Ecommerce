@@ -18,12 +18,23 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $token = $user->createToken('token_name')->plainTextToken;
+        $token = $user->createToken('token')->plainTextToken;
     
         return response()->json([
-            'message' => 'success',
+            'message' => 'Berhasil login',
             'user' => $user,
             'token' => $token,
         ], 200);
     }
+
+    public function logout(Request $request)
+    {
+        $user = $request->user();
+        $user->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => 'Berhasil logout'
+        ], 200);
+    }
+
 }

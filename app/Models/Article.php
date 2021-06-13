@@ -11,7 +11,10 @@ class Article extends Model
 
     protected $table = "articles";
     protected $fillable = ['judul', 'description', 'link'];
+    // new
+    protected $guarded = [];
 
+    // GA BISA 
     // public $articles, $judul, $description, $link;
     // public $isModal;
 

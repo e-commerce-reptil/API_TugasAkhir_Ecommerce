@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class Articles extends Component
 {
@@ -24,43 +26,64 @@ class Articles extends Component
         $this->isOpen = false;
     }
 
-    public function store(){
-        $this->validate([
+    // public function store(){
+    //     $this->validate([
+    //         'judul' => 'required',
+    //         'description' => 'required',
+    //          'link' => 'required'
+    //     ]);
+
+    //     Article::updateOrCreate(['id' => $this->postId], [
+    //             'judul' => $this->judul,
+    //             'description' => $this->description,
+    //             'link' => $this->link
+    //     ]);
+
+    //     $this->hideModal();
+
+    //     session()->flash('info',$this->postId ? 'Update Success' : 'Created Success');
+
+    //     $this->judul = '';
+    //     $this->description = '';
+    //     $this->link = '';
+    // }
+
+    // public function edit($id){
+    //     $article = Article::findOrFail($id);
+    //     $this->postId = $id;
+    //     $this->judul = $article->judul;
+    //     $this->description = $article->description;
+    //     $this->link = $article->link;
+    //     $this->showModal();
+    // }
+
+    // public function delete($id){
+    //     Article::find($id)->delete();
+    // }
+
+    // new
+    public function store(Request $request){
+        $request->validate([
             'judul' => 'required',
             'description' => 'required',
              'link' => 'required'
         ]);
 
-        Article::updateOrCreate(['id' => $this->postId], [
-                'judul' => $this->judul,
-                'description' => $this->description,
-                'link' => $this->link
-        ]);
+        $articles = new Article();
+        $articles->judul = $request->judul;
+        $articles->description = $request->description;
+        $articles->link = $request->link;
+        $articles->save();
 
-        $this->hideModal();
-
-        session()->flash('info',$this->postId ? 'Update Success' : 'Created Success');
-
-        $this->judul = '';
-        $this->description = '';
-        $this->link = '';
-    }
-
-    public function edit($id){
-        $article = Article::findOrFail($id);
-        $this->postId = $id;
-        $this->judul = $article->judul;
-        $this->description = $article->description;
-        $this->link = $article->link;
-        $this->showModal();
-    }
-
-    public function delete($id){
-        Article::find($id)->delete();
+        return response()->json([
+            'message' => 'Data berhasil ditambahkan'
+        ], 200);
     }
 
 
 
+
+    // CARA GAGAL 
     //public $isModal;
 
     // protected $fillable = [
