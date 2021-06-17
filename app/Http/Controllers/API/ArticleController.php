@@ -8,17 +8,22 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function add(Request $request)
-    {
-        $userId = $request->user()->id;
+    // API Method
+    public function store(Request $request){
+        $request->validate([
+            'judul' => 'required',
+            'description' => 'required',
+             'link' => 'required'
+        ]);
 
-        $detail = new Article();
-        $detail->judul = $request->judul;
-        $detail->description = $request->description;
-        $detail->link = $request->link;
-        $detail->user_id = $userId;
-        $detail->save();
+        $articles = new Article();
+        $articles->judul = $request->judul;
+        $articles->description = $request->description;
+        $articles->link = $request->link;
+        $articles->save();
 
-        return response (['success' => true]);
+        return response()->json([
+            'message' => 'Data berhasil ditambahkan'
+        ], 200);
     }
 }

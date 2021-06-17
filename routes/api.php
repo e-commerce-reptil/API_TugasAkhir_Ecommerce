@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FormController;
+use App\Http\Controllers\API\ArticleController;
 use App\Http\Livewire\Articles;
 
 /*
@@ -20,10 +21,12 @@ use App\Http\Livewire\Articles;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
 Route::group(['middleware' => 'auth:sanctum'], function(){
     //Route::get('/form', [FormController::class, 'index']);
-    Route::post('/article', [Articles::class, 'store']);
+    Route::post('/article', [ArticleController::class, 'store']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);

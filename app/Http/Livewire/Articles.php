@@ -26,59 +26,42 @@ class Articles extends Component
         $this->isOpen = false;
     }
 
-    // public function store(){
-    //     $this->validate([
-    //         'judul' => 'required',
-    //         'description' => 'required',
-    //          'link' => 'required'
-    //     ]);
-
-    //     Article::updateOrCreate(['id' => $this->postId], [
-    //             'judul' => $this->judul,
-    //             'description' => $this->description,
-    //             'link' => $this->link
-    //     ]);
-
-    //     $this->hideModal();
-
-    //     session()->flash('info',$this->postId ? 'Update Success' : 'Created Success');
-
-    //     $this->judul = '';
-    //     $this->description = '';
-    //     $this->link = '';
-    // }
-
-    // public function edit($id){
-    //     $article = Article::findOrFail($id);
-    //     $this->postId = $id;
-    //     $this->judul = $article->judul;
-    //     $this->description = $article->description;
-    //     $this->link = $article->link;
-    //     $this->showModal();
-    // }
-
-    // public function delete($id){
-    //     Article::find($id)->delete();
-    // }
-
-    // new
-    public function store(Request $request){
-        $request->validate([
+    public function store(){
+        $this->validate([
             'judul' => 'required',
             'description' => 'required',
              'link' => 'required'
         ]);
 
-        $articles = new Article();
-        $articles->judul = $request->judul;
-        $articles->description = $request->description;
-        $articles->link = $request->link;
-        $articles->save();
+        Article::updateOrCreate(['id' => $this->postId], [
+                'judul' => $this->judul,
+                'description' => $this->description,
+                'link' => $this->link
+        ]);
 
-        return response()->json([
-            'message' => 'Data berhasil ditambahkan'
-        ], 200);
+        $this->hideModal();
+
+        session()->flash('info',$this->postId ? 'Update Success' : 'Created Success');
+
+        $this->judul = '';
+        $this->description = '';
+        $this->link = '';
     }
+
+    public function edit($id){
+        $article = Article::findOrFail($id);
+        $this->postId = $id;
+        $this->judul = $article->judul;
+        $this->description = $article->description;
+        $this->link = $article->link;
+        $this->showModal();
+    }
+
+    public function delete($id){
+        Article::find($id)->delete();
+    }
+
+    
 
 
 
