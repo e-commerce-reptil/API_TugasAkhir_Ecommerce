@@ -30,7 +30,7 @@ Route::get('/posts', Posts::class);
 //     return view('dashboard');
 // })->name('dashboard');
 
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
+Route::group(['middleware' => ['auth:sanctum', 'verified','accessrole',]], function(){
     Route::get('/dashboard', function() {
         return view('dashboard');
     })->name('dashboard');

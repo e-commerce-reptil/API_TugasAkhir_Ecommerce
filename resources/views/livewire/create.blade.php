@@ -67,7 +67,7 @@
                             @enderror
                         </div>
                         <div class="mb-4">
-                            <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Foto</label>
+                            <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
                             <select type="text" wire:model="category_id" class="shadow appearance-none border rounded w-full py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category_id">
                             <option value="">Pilih</option>
                             <option value="1">Hewan</option>
